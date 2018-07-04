@@ -74,6 +74,18 @@
   background-size:cover;
 }
 
+.bg-faded-black {
+  background-color: rgba(0,0,0,0.4);
+}
+
+.bg-faded-white {
+  background-color: rgba(256,256,256,0.8);
+}
+
+.bg-faded-blue {
+  background-color: rgba(82, 157, 212, 0.8);
+}
+
 .t0 {
   top: 0 !important;
 }
@@ -106,6 +118,10 @@
   display: none !important;
 }
 
+.dg {
+  display: grid;
+}
+
 .dt {
   display: table;
 }
@@ -114,24 +130,52 @@
   display: table-cell;
 }
 
+.df {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  
+  .flex {
+    flex: 1;
+  }
+}
+
+.fdc {
+  flex-direction: column;
+}
+
+.fg1 {
+  flex-grow: 1;
+}
+
 .m-a {
   margin: auto !important;
 }
 
-.h100p {
-  height: 100% !important;
-}
-
-.w100p {
-  width: 100% !important;
+.wi {
+  width: initial !important;
 }
 
 .hi {
   height: initial !important;
 }
 
-.wi {
-  width: initial !important;
+.h100p {
+  height: 100% !important;
+}
+
+.bdrs0 {
+  border-radius: 0;
+}
+
+.bdrs5 {
+  border-radius: 5px;
+}
+
+.bdrs10 {
+  border-radius: 10px;
 }
 
 .bdrs50p {
@@ -152,6 +196,68 @@
 
 .br {
   border-right: 1px solid #333;
+}
+
+.lhi {
+  line-height: initial;
+}
+
+.v-center-parent {
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+
+.v-center-child {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fake-link {
+  color: #4b91ce;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.error-text {
+  font-size: 0.8em;
+  color: #c70101;
+}
+
+.error-input {
+  border: 1px solid #c70101;
+}
+
+.inline-form {
+  li {
+    display: inline;
+  }
+}
+
+.bxsh {
+  box-shadow: 1px 1px 5px #c3c3c3;
+}
+
+.tsh1 {
+  text-shadow: 1px 1px 1px #333;
+}
+
+.tsh2 {
+  text-shadow: 2px 2px 2px #333;
+}
+
+$v-pixel-sizes: 5 10 15 20 25 30 35 40 45 50 75 100 150 200 250;
+
+@each $size in $v-pixel-sizes {
+  .v-center-adjust#{$size} {
+    margin-top: -#{$size}px;
+  }
 }
 
 .lisn {
@@ -229,5 +335,13 @@ $pixel-sizes: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 20 25 30 35 40 45 50 75 100 
 @each $size in $pixel-sizes {
   .pl#{$size} {
     padding-left: #{$size}px !important;
+  }
+}
+
+$percentage-sizes: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 20 25 30 32 33 35 40 45 50 65 66 75 80 85 90 95 100;
+
+@each $size in $percentage-sizes {
+  .w#{$size} {
+    width: #{$size}% !important;
   }
 }
